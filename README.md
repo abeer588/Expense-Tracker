@@ -23,10 +23,4 @@ Planned files:
 
 Dates will use `YYYY-MM-DD`. Date filters will include both the start and end dates.
 
-## Current status
 
-This repository starts with a project plan. The Python program has not been implemented yet.
-
-## Next step
-
-Create the numbered menu and add the option to quit.

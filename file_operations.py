@@ -34,11 +34,12 @@ def load_expenses(filename):
     return expenses
 
 
-# Export all expenses to a CSV file for Excel.
+# Export the displayed fields to a CSV file for Excel.
 def export_csv(expenses, filename):
     with open(filename, "w", newline="", encoding="utf-8-sig") as file:
         writer = csv.writer(file)
-        writer.writerow(["date", "category", "amount", "description"])
+        fields = ["date", "category", "amount", "description"]
+        writer.writerow(fields)
         for expense in expenses:
             writer.writerow([expense["date"], expense["category"],
                              f"{expense['amount']:.2f}", expense["description"]])

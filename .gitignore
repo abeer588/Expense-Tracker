@@ -1,0 +1,25 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local settings
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Personal expense data and exports
+expenses.json
+expenses.csv
+data/
+exports/
+
+# Operating system files
+.DS_Store
+Thumbs.db

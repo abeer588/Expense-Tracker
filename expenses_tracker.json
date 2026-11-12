@@ -1,0 +1,20 @@
+[
+    {
+        "date": "2025-11-16",
+        "category": "Entertainment",
+        "amount": 200.0,
+        "description": "Party"
+    },
+    {
+        "date": "2026-02-12",
+        "category": "Medical",
+        "amount": 600.0,
+        "description": "Medicines"
+    },
+    {
+        "date": "2026-07-25",
+        "category": "Admission",
+        "amount": 2500.0,
+        "description": "College Admission"
+    }
+]

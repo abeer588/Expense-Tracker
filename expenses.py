@@ -1,5 +1,6 @@
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
+from textwrap import wrap
 
 
 # Check that a date uses YYYY-MM-DD.
@@ -41,18 +42,29 @@ def add_expense(expenses):
     print("Expense added. Choose Save to keep it in a file.")
 
 
-# Print expenses and their total.
+# Print expenses in a table with a total.
 def show_expenses(expenses):
     if not expenses:
-        print("No expenses found.")
+        print("\nNo expenses found.")
         return
+    line = "-" * 79
+    print("\n" + line)
+    print(f"{'Date':<10} | {'Category':<16} | {'Amount':>12} | Description")
+    print(line)
     total = Decimal("0")
     for expense in expenses:
         amount = Decimal(str(expense["amount"]))
-        print(f"{expense['date']} | {expense['category']} | "
-              f"{amount:.2f} | {expense['description']}")
+        categories = wrap(expense["category"], width=16) or [""]
+        descriptions = wrap(expense["description"], width=32) or [""]
+        for index in range(max(len(categories), len(descriptions))):
+            date = expense["date"] if index == 0 else ""
+            value = f"{amount:.2f}" if index == 0 else ""
+            category = categories[index] if index < len(categories) else ""
+            description = descriptions[index] if index < len(descriptions) else ""
+            print(f"{date:<10} | {category:<16} | {value:>12} | {description}")
         total += amount
-    print(f"Total: {total:.2f}")
+    print(line)
+    print(f"Expenses: {len(expenses)}    Total: {total:.2f}")
 
 
 # Find expenses that match the dates and category.

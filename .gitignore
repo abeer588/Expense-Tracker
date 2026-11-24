@@ -23,3 +23,6 @@ exports/
 # Operating system files
 .DS_Store
 Thumbs.db
+
+expenses_tracker.json
+tracker.csv
